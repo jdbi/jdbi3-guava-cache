@@ -34,14 +34,16 @@ install-nodocker: install
 install-fast: JDBI_MAVEN_OPTS += -Pfast
 install-fast: install
 
-tests: JDBI_MAVEN_OPTS += -Dbasepom.it.skip=false
+# replace with "false" when https://github.com/apache/maven-invoker-plugin/pull/169 / MINVOKER-318 has been resolved and released
+tests: JDBI_MAVEN_OPTS += -Dbasepom.it.skip=true
 tests:
 	${MAVEN} surefire:test invoker:install invoker:integration-test invoker:verify
 
 tests-nodocker: JDBI_MAVEN_OPTS += -Dno-docker
 tests-nodocker: tests
 
-deploy: JDBI_MAVEN_OPTS += -Dbasepom.it.skip=false
+# replace with "false" when https://github.com/apache/maven-invoker-plugin/pull/169 / MINVOKER-318 has been resolved and released
+deploy: JDBI_MAVEN_OPTS += -Dbasepom.it.skip=true
 deploy:
 	${MAVEN} clean deploy
 
