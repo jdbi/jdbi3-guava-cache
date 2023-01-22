@@ -21,6 +21,7 @@
             <mirrorOf>snapshots-repo</mirrorOf>
         </mirror>
     </mirrors>
+
     <profiles>
         <profile>
             <id>it-repo</id>
