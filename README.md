@@ -19,3 +19,4 @@ This package is intended to be released whenever a [main JDBI](https://github.co
 - Submit a PR that changes the parent version and the `dep.jdbi3.version` property to the just released main version
 - Once the PR passes all tests, merge it
 - Run the release steps as described [in the JDBI release document](https://github.com/jdbi/jdbi/blob/master/RELEASE_STEPS.md).
+
