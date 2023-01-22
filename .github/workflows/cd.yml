@@ -1,9 +1,9 @@
-name: CD from master pushes
+name: CD from main branch pushes
 
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   cd:
