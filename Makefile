@@ -35,7 +35,7 @@ install-fast: JDBI_MAVEN_OPTS += -Pfast
 install-fast: install
 
 # replace with "false" when https://github.com/apache/maven-invoker-plugin/pull/169 / MINVOKER-318 has been resolved and released
-tests: JDBI_MAVEN_OPTS += -Dbasepom.it.skip=true
+tests: JDBI_MAVEN_OPTS += -Dbasepom.it.skip=false
 tests:
 	${MAVEN} surefire:test invoker:install invoker:integration-test invoker:verify
 
