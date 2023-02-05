@@ -1,4 +1,4 @@
-[![CI Build with tests](https://github.com/jdbi/jdbi3-guava-cache/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jdbi/jdbi3-guava-cache/actions/workflows/ci.yml)
+[![CI Build with tests](https://github.com/jdbi/jdbi3-guava-cache/actions/workflows/ci.yml/badge.svg)](https://github.com/jdbi/jdbi3-guava-cache/actions/workflows/ci.yml)
 [![CD from main branch pushes](https://github.com/jdbi/jdbi3-guava-cache/actions/workflows/cd.yml/badge.svg)](https://github.com/jdbi/jdbi3-guava-cache/actions/workflows/cd.yml)
 
 # Jdbi 3 Cache implementation using the Guava cache
