@@ -160,6 +160,8 @@
                                 <exclude>**/TestScript.*</exclude>
                                 <exclude>**/ConstructorMapperPgTest.*</exclude>
                                 <exclude>**/TestArgumentBinder.*</exclude>
+                                <exclude>**/TestQueriesPG.*</exclude>
+                                <exclude>**/TestCallable.*</exclude>
                             </excludes>
                         </configuration>
                     </plugin>
