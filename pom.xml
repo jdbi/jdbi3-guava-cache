@@ -38,6 +38,19 @@
     <properties>
         <!-- run with -Dbasepom.it.skip=false to run tests using the guava cache plugin -->
         <basepom.it.skip>true</basepom.it.skip>
+
+        <!-- site requires full javadoc generation -->
+        <basepom.javadoc.skip>false</basepom.javadoc.skip>
+
+        <basepom.site.scm.branch>master</basepom.site.scm.branch>
+        <basepom.site.scm.checkout-directory>${java.io.tmpdir}/gh-pages-publish/${project.artifactId}</basepom.site.scm.checkout-directory>
+        <basepom.site.scm.id>github</basepom.site.scm.id>
+        <basepom.site.scm.site-path>modules/${project.artifactId}/development</basepom.site.scm.site-path>
+        <basepom.site.scm.skip-deploy>false</basepom.site.scm.skip-deploy>
+        <basepom.site.scm.url>scm:git:https://github.com/jdbi/jdbi.github.io</basepom.site.scm.url>
+
+        <basepom.site.skip>false</basepom.site.skip>
+
         <dep.jdbi3.version>3.38.3</dep.jdbi3.version>
         <moduleName>org.jdbi.v3.cache.guava</moduleName>
     </properties>
@@ -127,4 +140,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>jdbi-release</id>
+            <properties>
+                <basepom.site.scm.site-path>modules/${project.artifactId}/release-${project.version}</basepom.site.scm.site-path>
+            </properties>
+        </profile>
+    </profiles>
 </project>
