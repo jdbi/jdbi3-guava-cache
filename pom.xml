@@ -23,7 +23,7 @@
 
     <groupId>org.jdbi</groupId>
     <artifactId>jdbi3-guava-cache</artifactId>
-    <version>2.3-SNAPSHOT</version>
+    <version>3.38.4-SNAPSHOT</version>
 
     <name>jdbi3 guava cache</name>
     <description>Cache implementation with the guava cache</description>
@@ -45,13 +45,15 @@
         <basepom.site.scm.branch>master</basepom.site.scm.branch>
         <basepom.site.scm.checkout-directory>${java.io.tmpdir}/gh-pages-publish/${project.artifactId}</basepom.site.scm.checkout-directory>
         <basepom.site.scm.id>github</basepom.site.scm.id>
-        <basepom.site.scm.site-path>modules/${project.artifactId}/development</basepom.site.scm.site-path>
+        <basepom.site.scm.site-path>modules/${project.artifactId}</basepom.site.scm.site-path>
         <basepom.site.scm.skip-deploy>false</basepom.site.scm.skip-deploy>
         <basepom.site.scm.url>scm:git:https://github.com/jdbi/jdbi.github.io</basepom.site.scm.url>
 
         <basepom.site.skip>false</basepom.site.skip>
 
+        <!-- base version to build against. Must be released before this module can be released. -->
         <dep.jdbi3.version>3.38.3</dep.jdbi3.version>
+
         <moduleName>org.jdbi.v3.cache.guava</moduleName>
     </properties>
 
@@ -133,6 +135,19 @@
     </pluginRepositories>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <configuration>
+                        <links combine.children="append">
+                            <link>https://jdbi.org/releases/${dep.jdbi3.version}/apidocs</link>
+                        </links>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -145,7 +160,7 @@
         <profile>
             <id>jdbi-release</id>
             <properties>
-                <basepom.site.scm.site-path>modules/${project.artifactId}/release-${project.version}</basepom.site.scm.site-path>
+                <basepom.site.scm.site-path>modules/${project.artifactId}/releases/${project.version}</basepom.site.scm.site-path>
             </properties>
         </profile>
     </profiles>
