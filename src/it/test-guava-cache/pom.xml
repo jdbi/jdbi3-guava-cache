@@ -22,7 +22,7 @@
 
     <groupId>org.jdbi</groupId>
     <artifactId>test-guava-cache</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>@project.version@</version>
 
     <properties>
         <basepom.check.skip-all>true</basepom.check.skip-all>
@@ -33,7 +33,7 @@
             <dependency>
                 <groupId>org.jdbi</groupId>
                 <artifactId>jdbi3-bom</artifactId>
-                <version>@dep.jdbi3.version@</version>
+                <version>${project.parent.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.jdbi</groupId>
             <artifactId>jdbi3-guava-cache</artifactId>
-            <version>@project.version@</version>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -71,6 +71,12 @@
         <dependency>
             <groupId>org.inferred</groupId>
             <artifactId>freebuilder</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -140,33 +146,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>jdk8</id>
-            <activation>
-                <jdk>1.8</jdk>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <excludes combine.children="append">
-                                <exclude>**/TestCollectionArguments.*</exclude>
-                                <exclude>**/TestBatchExceptionRewrite.*</exclude>
-                                <exclude>**/TestPreparedBatchGenerateKeysPostgres.*</exclude>
-                                <exclude>**/TestPreparedBatchPG.*</exclude>
-                                <exclude>**/TestScript.*</exclude>
-                                <exclude>**/ConstructorMapperPgTest.*</exclude>
-                                <exclude>**/TestArgumentBinder.*</exclude>
-                                <exclude>**/TestQueriesPG.*</exclude>
-                                <exclude>**/TestCallable.*</exclude>
-                            </excludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
