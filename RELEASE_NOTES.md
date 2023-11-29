@@ -1,5 +1,8 @@
 # Unreleased
 
+# 3.42.0
+* synced with mainline 3.41.3 release
+
 # 3.41.3
 * synced with mainline 3.41.3 release
 
