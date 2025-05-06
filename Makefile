@@ -67,7 +67,7 @@ deploy-site::
 release::
 	${MAVEN} clean release:clean release:prepare release:perform
 
-release-site:: MAVEN_CONFIG += -Pjdbi-release
+release-site:: MAVEN_ARGS += -Pjdbi-release
 release-site:: deploy-site
 
 help::
