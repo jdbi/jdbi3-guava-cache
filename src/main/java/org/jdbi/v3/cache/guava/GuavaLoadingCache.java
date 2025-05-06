@@ -74,7 +74,7 @@ public final class GuavaLoadingCache<K, V> implements JdbiCache<K, V> {
     }
 
     private static <K, V> CacheLoader<K, Optional<V>> cacheLoaderAdapter(JdbiCacheLoader<K, V> cacheLoader) {
-        return new CacheLoader<K, Optional<V>>() {
+        return new CacheLoader<>() {
 
             @Override
             public Optional<V> load(K key) {
