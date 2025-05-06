@@ -5,4 +5,4 @@ changes. If a release is not listed here, it contains the same code as
 the previous release except it was compiled against the matching
 release of the main Jdbi code base.
 
-Current release is 3.45.3
+Current release is 3.45.4
