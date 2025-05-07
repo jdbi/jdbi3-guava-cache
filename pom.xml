@@ -44,10 +44,9 @@
 
         <basepom.site.scm.branch>master</basepom.site.scm.branch>
         <basepom.site.scm.checkout-directory>${java.io.tmpdir}/gh-pages-publish/${project.artifactId}</basepom.site.scm.checkout-directory>
-        <basepom.site.scm.id>github</basepom.site.scm.id>
         <basepom.site.scm.site-path>modules/${project.artifactId}</basepom.site.scm.site-path>
         <basepom.site.scm.skip-deploy>false</basepom.site.scm.skip-deploy>
-        <basepom.site.scm.url>scm:git:https://github.com/jdbi/jdbi.github.io</basepom.site.scm.url>
+        <basepom.site.scm.url>scm:git:git@github.com:jdbi/jdbi.github.io.git</basepom.site.scm.url>
 
         <basepom.site.skip>false</basepom.site.skip>
 
